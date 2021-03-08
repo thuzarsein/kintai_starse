@@ -1,0 +1,4 @@
+com\starse\kintai\model\EmployeeInfo.class
+com\starse\kintai\ConfigAboutWeb.class
+com\starse\kintai\StarseKintaiApplication.class
+com\starse\kintai\repo\EmployeeInfoRepo.class

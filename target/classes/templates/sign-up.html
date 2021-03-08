@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{/site/template}">
+<head>
+<meta charset="UTF-8">
+<title>ユーザー登録</title>
+</head>
+<body class="h-100">
+	<section layout:fragment="content" class="container h-100 d-flex align-items-center justify-content-center">
+		<div class="card w-50">
+			<div class="card-body white-text bg-secondary"> 
+				<h4 class="card-title text-center"><i class="fa fa-user-plus"></i>ユーザー登録</h4>
+				<form th:action="@{/sign-up}" method="POST">
+					<div class="form-group">
+						<label for="name"> 名前 : </label>
+						<input name="name" type="text" class="form-control" placeholder="お名前を入力してください"/>
+					</div>					
+					<div class="form-group">
+						<label for="mail"> メール : </label>
+						<input name="mail" type="email" class="form-control" placeholder="メールアドレスを入力してください"/>
+					</div>
+					<div class="form-group">
+						<label for="password"> パスワード : </label>
+						<input name="password" type="password" class="form-control" placeholder="暗証番号を入れてください"/>
+					</div>
+					<!-- <div class="form-group">
+						<label for="groupNo"> グループ番号: </label>
+						<input type="text" class="form-control" placeholder="グループ番号を入力してください"/>
+					</div>
+					<div class="form-group">
+						<label for="position"> 立場 : </label>
+						<input type="text" class="form-control" placeholder="立場を入力してください"/>
+					</div>	
+					<div class="form-group">
+						<label for="phoneNo"> 電話番号: </label>
+						<input type="text" class="form-control" placeholder="電話番号を入力してください"/>
+					</div>	 -->
+					<button type="submit" class="btn btn-primary">登録</button> 
+				</form>
+			</div>
+		</div>
+	</section>
+</body>
+</html>

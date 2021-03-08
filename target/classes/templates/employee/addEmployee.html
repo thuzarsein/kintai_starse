@@ -1,0 +1,213 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "http://www.w3.org/TR/html4/frameset.dtd">
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{/site/template}">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2, minimum-scale=1" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
+<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script> -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> 
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous" />
+
+<!-- jQuery library -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+
+<!-- Latest compiled Bootstrap JS-->
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+  <linK rel="stylesheet" href="/resources/static/font-awesome-4.7.0/css/font-awesome.min.css">
+
+<title>管理者</title>
+</head>
+<style type="text/css">		
+	 #panel1{
+		border:1px solid #000000;			
+		border: 100 10 10 10px;
+	}		
+		
+	/*=============== DATE PICKER CSS ================= */
+	.datepicker-days {
+		  font-size: 93%;
+		}
+		.datepicker-days th.dow:first-child,
+		.datepicker-days td:first-child {
+		  color: #f00;
+		}
+		.datepicker-days th.dow:last-child,
+		.datepicker-days td:last-child {
+		  color: #00f;
+		}
+		.bootstrap-datetimepicker-widget table td.active,
+		.bootstrap-datetimepicker-widget table td.active:hover {
+		  background-color: #337ab7;
+		  color: #fff;
+		  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+		}
+		 
+		.bootstrap-datetimepicker-widget table td span.active,
+		.bootstrap-datetimepicker-widget table td i.active {
+		  background-color: #337ab7;
+		  color: #fff;
+		  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+		}
+		.input-group-text {
+		  padding: .2rem .75rem;
+		  font-size: .9rem;
+		  height: calc(1.5em + 2px + 0.5rem);
+		}
+	
+	</style>
+	</head>
+<body class="h-100">	
+<section class="container d-flex align-items-center justify-content-center my-5">
+	
+		<div class="container h-100" id="panel1">		
+			<div class="row my-2 p-1" style="border-bottom:1px solid #000000;">
+			<div class="col-md-8" >						
+					<label class="p-1" style="border: 1px solid #000000">グループ名 :</label>
+			</div>
+			<div class="col-md-4">
+				<button class="btn btn-secondary">社員一覧</button>
+				<button class="btn btn-secondary">勤怠連絡―</button>
+				<button class="btn btn-secondary">ログアウ</button>
+			</div>
+		</div>		
+			
+		<form class="container">
+			<div class="d-flex">
+				<div class="ml-auto my-1">
+					<button class="btn btn-primary" style="width:100%; font-size:20px;" >　社員情報登録 </button>
+				</div>
+			</div>
+		<table class="table p-1">
+		  <thead style="background: rgba(158,176,160,1);"> 
+		    <tr>
+		      <th scope="col">No</th>
+		      <th scope="col">名前</th>
+		      <th scope="col">電話番号</th>
+		      <th scope="col">メール</th>
+		      <th scope="col">入社日</th>
+		      <th scope="col">住所</th>
+		      <th scope="col">修正</th>
+		    </tr>
+		  </thead>
+		  <tbody>
+		    <tr>
+		      <th scope="row">1</th>
+		      <td>A</td>
+		      <td>070111111111</td>
+		      <td>xxxxx"star-se.co.jp</td>
+		       <td>Ma2018/01/10</td>
+		      <td>xxxxxxxxxxxxxxxxxx</td>
+		      <td><button class="btn btn-primary">編集</button></td>		      	    
+		    </tr>
+		    <tr>
+		      <th scope="row">1</th>
+		      <td>B</td>
+		      <td>070111111111</td>
+		      <td>xxxxx"star-se.co.jp</td>
+		       <td>Ma2018/01/10</td>
+		      <td>xxxxxxxxxxxxxxxxxx</td>
+		      <td><button class="btn btn-primary">編集</button></td>		      	    
+		    </tr>
+		   <tr>
+		      <th scope="row">1</th>
+		      <td>C</td>
+		      <td>070111111111</td>
+		      <td>xxxxx"star-se.co.jp</td>
+		       <td>Ma2018/01/10</td>
+		      <td>xxxxxxxxxxxxxxxxxx</td>
+		      <td>
+      		<!-- Button to Open the Modal -->
+			  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+			    編集
+			  </button>
+	      	</td>
+		    </tr>
+		  </tbody>		
+		</table>
+  <!-- The Modal -->
+  <div class="modal fade" id="myModal">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title" style="align:center;"> 社員情報登録 / 更新 </h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body">
+         	<form>
+         		<div class="mb-3">
+         			<label for="recpient-name" class="col-form-label"> 名前  </label>
+         			<input type="text" class="form-control" id="receipt-name"/>
+         		</div>
+         		<div class="mb-3">
+         			<label for="recpient-name" class="col-form-label"> 電話番号  </label>
+         			<input type="text" class="form-control" id="receipt-name"/>
+         		</div>
+         		<div class="mb-3">
+         			<label for="recpient-name" class="col-form-label"> メール  </label>
+         			<input type="text" class="form-control" id="receipt-name"/>
+         		</div>
+         		<div class="mb-3">
+         			<label for="recpient-name" class="col-form-label"> 入社日 </label>
+         			<div class="form-group">
+				      <div class="input-group date" id="datePicker" data-target-input="nearest">				        
+				        <input type="text" class="form-control form-control-sm datetimepicker-input" data-target="#datePicker"/>
+				       <div class="input-group-append" data-target="#datePicker" data-toggle="datetimepicker">
+				          <div class="input-group-text"><i class="fa fa-calendar" aria-hidden="true"></i></div>
+				        </div>
+	     			 </div>
+					</div>
+         		</div>
+         		<div class="mb-3">
+         			<label for="recpient-name" class="col-form-label"> 住所 </label> 
+         			<textarea class="form-control" id="message-text"></textarea>
+         		</div>
+         	</form>
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">         
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">更新</button>
+     	  <button type="button" class="btn btn-primary" data-dismiss="modal">登録</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+		</form>
+		</div>
+	</section>
+	
+	<!-- DATE PICKER CLICK ACTION Script -->
+	  <!--Bootstrap4 Script-->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha38s4-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <!-- Tempus Dominus Script -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js" integrity="sha512-rmZcZsyhe0/MAjquhTgiUcb4d9knaFc7b5xAfju483gbEXTkeJRUMIPk6s3ySZMYUHEcjKbjLjyddGWMrNEvZg==" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/locale/ja.min.js" integrity="sha512-rElveAU5iG1CzHqi7KbG1T4DQIUCqhitISZ9nqJ2Z4TP0z4Aba64xYhwcBhHQMddRq27/OKbzEFZLOJarNStLg==" crossorigin="anonymous"></script>
+  <!-- Moment.js -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.0/js/tempusdominus-bootstrap-4.min.js"></script>
+  <!-- datetimepicker実装 -->
+  <script type="text/javascript">
+    $(function () {
+        $('#datePicker').datetimepicker({locale: 'ja', dayViewHeaderFormat: 'YYYY年M月' ,format: 'YYYY/MM/DD'});
+        $('#timePicker').datetimepicker({locale: 'ja', format: 'HH:mm'});
+    });
+</script>
+
+<!-- Model form -->
+
+	</body>
+</html>
+					

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	class="h-100">
+<head>
+<meta charset="UTF-8">
+<title layout:title-pattern="$LAYOUT_TITLE|$CONTENT_TITLE">STAR SE KINTAI SYSTEM</title>
+
+<link rel="stylesheet" th:href="@{/resources/css/bootstrap.min.css}"/>
+<link rel="stylesheet" th:href="@{/resources/css/font_awesome.min.css}"/>
+<linK rel="stylesheet" th:href="@{/resources/static/font-awesome.min.css}">
+<script th:src="@{/resources/js/jquery/jquery.min.js}"></script>
+<script th:src="@{/resources/js/jquery/popper.min.js}"></script>
+<script th:src="@{/resources/js/jquery/bootstrap.min.js}"></script>
+<style type="text/css">
+
+	.navbar{
+		background: rgb(74,102,134);
+		background: linear-gradient(90deg, rgba(74,102,134,1) 0%, rgba(158,176,160,1) 31%, rgba(74,102,134,1) 100%);
+	}
+
+</style>
+</head>
+<body class="h-100">
+
+	<nav class="navbar navbar-inverse navbar-light d-flex justify-content-between">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a th:href="@{/}" class="navbar-brand">STAR-SE 勤怠連絡</a>
+			</div>
+			<div class="navabar-brand">
+				<a th:href="@{/sign-up}" class="navbar-link" sec:authorize="isAnonymous()" style="color:#000000">
+					<i class="fa fa-user-plus"></i> <span> ユーザー登録 </span>
+				</a>
+				
+				<a th:href="@{/sign-in}" class="navbar-link"  sec:authorize="isAnonymous()" style="color:#000000">
+					<i class="fa fa-sign-in"></i> <span> ログイン </span>
+				</a>
+				
+				 <a th:href="@{/admin}" class="nav-link navbar-brand" sec:authorize="hasRole('Admin')" style="color:#000000">
+					<i class="fa fa-confirmation"><span>管理者</span></i>
+				</a>
+				
+				<a th:href="@{/employee}" class="nav-link navbar-brand" sec:authorize="hasRole('Employee')" style="color:#000000">
+					<i class="fa fa-send"><span>社員</span></i>
+				</a>
+				
+				<a href="#" id="logout-menu" class="nva-link"  sec:authorize="isAuthenticated()" style="color:#000000">
+					<i class="fa fa-sign-out"></i><span>ログアウト</span>
+				</a>
+				
+			</div>
+		</div>
+	</nav>
+	<section layout:fragment="content" class="container">
+		<h1> Home </h1>
+	</section>
+	
+	<form th:action="@{/logout}" method="POST" class="d-none" id="logout-form"></form>
+	
+	<script>
+	
+	$(() => $('#logout-menu').click(() => $('#logout-form').submit()))
+	</script>
+
+</body>
+</html>
